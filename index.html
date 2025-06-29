@@ -1,53 +1,180 @@
 <!DOCTYPE html>
-<html lang="es-mx">
-<head>
-    <meta charset="UTF-8"> 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio</title>
-    <link rel="stylesheet" href="styles/style.css">
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sergio Herrera | Portafolio Web</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-</head>
-<body>
-    <header class="header">
-        <nav class="header__menu">
-            <a class="header__menu__link" href="index.html">Home</a>
-            <a class="header__menu__link" href="about.html">Sobre mí</a>
+  <body>
+    <header>
+      <div class="container header">
+        <h1 class="logo">SeruhioCode30</h1>
+        <!-- Botón de menú hamburguesa -->
+        <button id="hamburger" aria-label="Toggle navigation"></button>
+        <nav id="nav-menu" class="nav">
+          <ul class="nav-links">
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
         </nav>
+      </div>
     </header>
-    <main class="presentacion">
-        <section class="presentacion__contenido">
-            <h1 class="presentacion__contenido__titulo">
-                Eleve tu negocio digital a otro nivel 
-                <strong class="titulo-destaque">con un Front-end de calidad!
-                </strong></h1>
-                <p class="presentacion__contenido__texto">¡Hola! Soy Ana García, desarrolladora Front-end con
-                    especialización en React, HTML y CSS. Ayudo a pequeños
-                    negocios y diseñadores a llevar a cabo buenas ideas.
-                    ¿Hablamos?
 
-                </p>
-                <div class="presentacion__enlaces">
-                    <h2 class="presentacion__enlaces__subtitulo">Accede a mis redes</h2>
-                    <a class="presentacion__enlaces__link" href="https://github.com/">
-                        <img src="./assets/github.png">
-                        Github
-                    </a>
-                    <a class="presentacion__enlaces__link" href="https://linkedin.com/in/">
-                        <img src="./assets/linkedin.png">
-                        Linkedin
-                    </a>
-                    <a class="presentacion__enlaces__link" href="https://twitch.tv/">
-                        <img src="./assets/twitch.png">
-                        Twitch
-                    </a>
-                </div>
-               
-        </section>
-            <img src="./assets/Imagen.png" alt="Foto de Ana García desarrolando un proyecto">
+    <main>
+      <section class="hero">
+        <div class="container hero-content">
+          <div class="hero-text">
+            <h2>Desarrollador Web</h2>
+            <p>
+              Creo sitios modernos, rápidos y funcionales utilizando HTML, CSS y JavaScript, con un backend sólido en
+               Java y Spring Boot. Me apasiona construir soluciones digitales útiles para emprendedores 
+               y pequeñas empresas.
+            </p>
+            <div class="social-links">
+              <a
+                class="social-links-enlace"
+                href="https://github.com/Seruhio30"
+                target="_blank"
+              >
+                <img src="assets/github.png" alt="" />
+                GitHub
+              </a>
+
+              <a
+                class="social-links-enlace"
+                href="https://www.linkedin.com/in/sergio-herrera-rivera"
+                target="_blank"
+              >
+                <img src="assets/linkedin.png" alt="" />
+                LinkedIn</a
+              >
+            
+            </div>
+          </div>
+          <img
+            src="assets/SergioProgramming.jpg"
+            alt="Foto de Sergio Herrera"
+            class="hero-img"
+          />
+        </div>
+      </section>
+
+      <section class="projects" id="proyectos">
+        <h2>Proyectos destacados</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3>Barbería Alura</h3>
+            <p>HTML, CSS y JS</p>
+            <img class="project-img" src="assets/barberia.png" alt="barberia" />
+            <a href="https://seruhio30.github.io/Barberia/aula%201/index.html">Ir Al Sitio</a>
+          </div>
+
+          <div class="project-card">
+            <h3>Rafting</h3>
+            <p>Proyecto de aventura</p>
+            <img class="project-img" src="assets/rafting.png" alt="rafting" />
+            <a href="#">Ver código</a>
+          </div>
+        </div>
+
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3>Barbería Alura</h3>
+            <p>HTML, CSS y JS</p>
+            <img class="project-img" src="assets/survivor.png" alt="barberia" />
+            <a href="https://seruhio30.github.io/Survival-front-end/">Ver código</a>
+          </div>
+
+          <div class="project-card">
+            <h3>Rafting</h3>
+            <p>Proyecto de aventura</p>
+            <img class="project-img" src="assets/rafting.png" alt="rafting" />
+            <a href="https://seruhio30.github.io/BYU-WDD130/wwr/index.html">Ir AL Sitio</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="about" id="sobre-mi">
+        <div class="container">
+          <h2>Sobre mí</h2>
+          <p>
+            Soy Sergio, desarrollador web autodidacta con una pasión por crear soluciones digitales que realmente aporten valor. 
+            Me especializo en el desarrollo de sitios web funcionales, combinando un frontend claro y atractivo con un backend
+             eficiente y bien estructurado. Siempre estoy aprendiendo y perfeccionando mis habilidades para ofrecer experiencias 
+             web prácticas, accesibles y modernas.
+          </p>
+        </div>
+      </section>
+
+      <section class="contact" id="contacto">
+        <div class="container">
+          <h2>Contacto</h2>
+          <p>¿Querés trabajar conmigo? Enviame un mensaje usando el formulario o por WhatsApp.</p>
+          <form action="" class="contact-form" id="formulario-de-contacto">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Teléfono (Opcional)</label>
+                <input type="tel" id="telefono" name="telefono">
+            </div>
+
+            <div class="form-group">
+                <label for="categoria">Área de interés</label>
+                <select id="categoria" name="categoria">
+                    <option value="otros">Escoge una opcion de interes</option>
+                    <option value="backend">Desarrollo Backend</option>
+                    <option value="api">Integración de APIs</option>
+                    <option value="otros">Pagina Web</option>
+                    <option value="otros">Landing Page</option>
+                    <option value="otros">Otros</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="btn">Enviar Solicitud</button>
+            <p id="resultado"></p>
+        </form>
+         
+
+          <a
+          href="https://wa.me/50687733663"
+          target="_blank"
+          class="btn whatsapp-btn">
+          Contactar por WhatsApp
+         </a>
+
+
+        </div>
+      </section>
     </main>
-    <footer class="footer">
-        <p>Desarrollado por Alura Latam</p>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 SeruhioCode30 | Todos los derechos reservados</p>
+      </div>
     </footer>
-</body>
+
+    <script src="script/index.js"></script>
+  </body>
 </html>
