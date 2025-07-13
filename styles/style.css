@@ -96,7 +96,7 @@ header {
 }
 
 
-/* Hero */
+/**************************** Hero **************************************/
 .hero {
   background-color: var(--color-hover);
   padding: 3rem 0;
@@ -206,14 +206,17 @@ header {
 
 
 .project-card a {
+  display: inline-block;
+  margin-top: 20px;
   color: var(--color-terciario);
   text-decoration: none;
   font-weight: bold;
+  
 
 }
 
 
-/* About */
+/************************************* About *******************************************/
 .about {
   padding: 3rem 0;
   background-color: var(--color-hover);
@@ -250,6 +253,8 @@ header {
   border-radius: 8px;
   font-weight: bold;
   transition: background 0.3s;
+  width: 15rem;
+  
 }
 
 .contact .btn:hover {
@@ -298,12 +303,13 @@ header {
   outline: 2px solid var(--color-terciario);
 }
 
-.whatsapp-btn {
-  background-color: #25d366;
-  color: #000;
-  text-align: center;
-  margin-top: 1rem;
+.contact-form .btn {
+  align-self: center;
 }
+
+
+
+
 
 
 /* Footer */
