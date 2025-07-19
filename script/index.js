@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 async function enviarCorreo() {
+  
     const emailData = {
         nombre: document.getElementById("nombre").value,
         remitente: document.getElementById("email").value,
@@ -30,7 +31,7 @@ async function enviarCorreo() {
     console.log("📥 Datos enviados:", emailData);
 
     try {
-        const respuesta = await fetch("http://localhost:8080/correo/enviar", {
+        const respuesta = await fetch("https://portafolio-back-end-sc30-1.onrender.com/correo/enviar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -42,11 +43,13 @@ async function enviarCorreo() {
             throw new Error("Error en la respuesta del servidor");
         }
 
-        const resultado = await respuesta.text(); // ✅ Captura correctamente el texto de respuesta
-        return resultado; // ✅ Retorna el resultado para `.then()`
+        const resultado = await respuesta.text(); 
+         alert("📬 ¡Formulario enviado con éxito! Gracias por tu mensaje.");
+        return resultado; 
     } catch (error) {
         console.error("Error en la solicitud:", error);
-        return "Error al enviar el correo."; // ✅ Retorna un texto en caso de error
+        alert("❌ Hubo un error al enviar el formulario.");
+        return "Error al enviar el correo."; 
     }
 }
 
