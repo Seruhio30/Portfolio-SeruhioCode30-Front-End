@@ -19,14 +19,21 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 async function enviarCorreo() {
-  
+
+    const ip = await fetch("https://api.ipify.org?format=json")
+        .then(r => r.json())
+        .then(d => d.ip);
+
     const emailData = {
         nombre: document.getElementById("nombre").value,
         remitente: document.getElementById("email").value,
         telefono: document.getElementById("telefono").value || "No proporcionado",
         categoria: document.getElementById("categoria").value,
-        contenido: document.getElementById("mensaje").value
+        contenido: document.getElementById("mensaje").value,
+        url: window.location.href,
+        ip: ip
     };
+
 
     console.log("📥 Datos enviados:", emailData);
 
@@ -43,13 +50,13 @@ async function enviarCorreo() {
             throw new Error("Error en la respuesta del servidor");
         }
 
-        const resultado = await respuesta.text(); 
-         alert("📬 ¡Formulario enviado con éxito! Gracias por tu mensaje.");
-        return resultado; 
+        const resultado = await respuesta.text();
+        alert("📬 ¡Formulario enviado con éxito! Gracias por tu mensaje.");
+        return resultado;
     } catch (error) {
         console.error("Error en la solicitud:", error);
         alert("❌ Hubo un error al enviar el formulario.");
-        return "Error al enviar el correo."; 
+        return "Error al enviar el correo.";
     }
 }
 
