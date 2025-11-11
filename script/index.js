@@ -22,7 +22,10 @@ async function enviarCorreo() {
 
     const ip = await fetch("https://api.ipify.org?format=json")
         .then(r => r.json())
-        .then(d => d.ip);
+        .then(d => d.ip)
+        .catch(() => "No disponible");
+
+    const url = window.location.href;
 
     const emailData = {
         nombre: document.getElementById("nombre").value,
@@ -30,12 +33,12 @@ async function enviarCorreo() {
         telefono: document.getElementById("telefono").value || "No proporcionado",
         categoria: document.getElementById("categoria").value,
         contenido: document.getElementById("mensaje").value,
-        url: window.location.href,
-        ip: ip
+        ip: ip,     // ✅ nuevo
+        url: url    // ✅ nuevo
     };
 
-
     console.log("📥 Datos enviados:", emailData);
+
 
     try {
         const respuesta = await fetch("https://portafolio-back-end.fly.dev/correo/enviar", {
