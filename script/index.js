@@ -31,7 +31,7 @@ async function enviarCorreo() {
     console.log("📥 Datos enviados:", emailData);
 
     try {
-        const respuesta = await fetch("https://portafolio-back-end-sc30-1.onrender.com/correo/enviar", {
+        const respuesta = await fetch(" https://portafolio-back-end.fly.dev/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
