@@ -121,14 +121,18 @@
         <label for="telefono">Teléfono</label>
         <input type="text" id="telefono">
       </div>
-      <div class="form-group">
-        <label for="categoria">Categoría</label>
-        <select id="categoria" required>
-          <option value="proyecto">Proyecto</option>
-          <option value="colaboracion">Colaboración</option>
-          <option value="otros">Otros</option>
-        </select>
-      </div>
+       <div class="form-group">
+            <label for="categoria">Área de interés</label>
+            <select id="categoria" name="categoria">
+              <option value="otros">Escoge una opcion de interes</option>
+              <option value="backend">Desarrollo Backend</option>
+              <option value="api">Integración de APIs</option>
+              <option value="otros">Pagina Web</option>
+              <option value="otros">Landing Page</option>
+              <option value="otros">Otros</option>
+            </select>
+          </div>
+
       <div class="form-group">
         <label for="mensaje">Mensaje</label>
         <textarea id="mensaje" rows="5" required></textarea>
