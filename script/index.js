@@ -24,13 +24,19 @@ async function enviarCorreo() {
     const successCheck = document.getElementById("success-check");
     const submitBtn = document.querySelector("button[type='submit']");
 
-    // Datos
+    // ✅ Obtener IP y URL
+    const ip = await obtenerIP();
+    const url = window.location.href;
+
+    // ✅ Datos formulario
     const emailData = {
         nombre: document.getElementById("nombre").value,
         remitente: document.getElementById("email").value,
         telefono: document.getElementById("telefono").value || "No proporcionado",
         categoria: document.getElementById("categoria").value,
-        contenido: document.getElementById("mensaje").value
+        contenido: document.getElementById("mensaje").value,
+        ip,
+        url
     };
 
     // ✅ Mostrar cargando
@@ -48,16 +54,25 @@ async function enviarCorreo() {
 
         if (!respuesta.ok) throw new Error();
 
-        // ✅ Éxito
+        // ✅ Ocultar loader
         loader.classList.add("hidden");
+
+        // ✅ Mostrar check ✔
         successCheck.classList.remove("hidden");
 
+        // ✅ Cambiar botón a exitoso
         submitBtn.classList.remove("loading");
         submitBtn.classList.add("success");
         submitBtn.innerText = "¡Enviado! ✔";
 
+        // ✅ ✅ LIMPIAR FORM
+        document.getElementById("formulario-de-contacto").reset();
+
         setTimeout(() => {
+            // ocultar ✔
             successCheck.classList.add("hidden");
+
+            // Botón vuelve a la normalidad
             submitBtn.classList.remove("success");
             submitBtn.innerText = "Enviar mensaje";
             submitBtn.disabled = false;
@@ -67,7 +82,10 @@ async function enviarCorreo() {
 
     } catch (err) {
 
+        // ✅ Ocultar loader
         loader.classList.add("hidden");
+
+        // Botón indica error
         submitBtn.classList.remove("loading");
         submitBtn.disabled = false;
         submitBtn.innerText = "Error ❌";
@@ -81,6 +99,16 @@ async function enviarCorreo() {
         return "Error";
     }
 }
+async function obtenerIP() {
+  try {
+    const r = await fetch("https://api.ipify.org?format=json");
+    const data = await r.json();
+    return data.ip;
+  } catch {
+    return "No disponible";
+  }
+}
+
 
 
 function setupHamburgerMenu() {
