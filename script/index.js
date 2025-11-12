@@ -20,48 +20,68 @@ document.addEventListener("DOMContentLoaded", function () {
 
 async function enviarCorreo() {
 
-    const ip = await fetch("https://api.ipify.org?format=json")
-        .then(r => r.json())
-        .then(d => d.ip)
-        .catch(() => "No disponible");
+    const loader = document.getElementById("loader");
+    const successCheck = document.getElementById("success-check");
+    const submitBtn = document.querySelector("button[type='submit']");
 
-    const url = window.location.href;
-
+    // Datos
     const emailData = {
         nombre: document.getElementById("nombre").value,
         remitente: document.getElementById("email").value,
         telefono: document.getElementById("telefono").value || "No proporcionado",
         categoria: document.getElementById("categoria").value,
-        contenido: document.getElementById("mensaje").value,
-        ip: ip,     // ✅ nuevo
-        url: url    // ✅ nuevo
+        contenido: document.getElementById("mensaje").value
     };
 
-    console.log("📥 Datos enviados:", emailData);
-
+    // ✅ Mostrar cargando
+    loader.classList.remove("hidden");
+    submitBtn.classList.add("loading");
+    submitBtn.innerText = "Enviando...";
+    submitBtn.disabled = true;
 
     try {
         const respuesta = await fetch("https://portafolio-back-end.fly.dev/correo/enviar", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(emailData)
         });
 
-        if (!respuesta.ok) {
-            throw new Error("Error en la respuesta del servidor");
-        }
+        if (!respuesta.ok) throw new Error();
 
-        const resultado = await respuesta.text();
-        alert("📬 ¡Formulario enviado con éxito! Gracias por tu mensaje.");
-        return resultado;
-    } catch (error) {
-        console.error("Error en la solicitud:", error);
+        // ✅ Éxito
+        loader.classList.add("hidden");
+        successCheck.classList.remove("hidden");
+
+        submitBtn.classList.remove("loading");
+        submitBtn.classList.add("success");
+        submitBtn.innerText = "¡Enviado! ✔";
+
+        setTimeout(() => {
+            successCheck.classList.add("hidden");
+            submitBtn.classList.remove("success");
+            submitBtn.innerText = "Enviar mensaje";
+            submitBtn.disabled = false;
+        }, 3000);
+
+        return await respuesta.text();
+
+    } catch (err) {
+
+        loader.classList.add("hidden");
+        submitBtn.classList.remove("loading");
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Error ❌";
+
         alert("❌ Hubo un error al enviar el formulario.");
-        return "Error al enviar el correo.";
+
+        setTimeout(() => {
+            submitBtn.innerText = "Enviar mensaje";
+        }, 2500);
+
+        return "Error";
     }
 }
+
 
 function setupHamburgerMenu() {
     const hamButton = document.querySelector('#hamburger');

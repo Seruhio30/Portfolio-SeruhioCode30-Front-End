@@ -29,21 +29,21 @@
   </header>
 
   <section class="hero" id="inicio">
-  <div class="container hero-content">
-    <div class="hero-text">
-      <h2>Hola, soy Sergio Herrera</h2>
-      <p>Desarrollador web apasionado por crear sitios rápidos, accesibles y enfocados en resultados.</p>
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h2>Hola, soy Sergio Herrera</h2>
+        <p>Desarrollador web apasionado por crear sitios rápidos, accesibles y enfocados en resultados.</p>
 
-      <div class="social-links">
-        <a href="https://github.com/Seruhio30" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/sergio-herrera-rivera" target="_blank">LinkedIn</a>
-        <a class="btn-whatsapp" href="https://wa.me/50687733663" target="_blank">WhatsApp</a>
+        <div class="social-links">
+          <a href="https://github.com/Seruhio30" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/sergio-herrera-rivera" target="_blank">LinkedIn</a>
+          <a class="btn-whatsapp" href="https://wa.me/50687733663" target="_blank">WhatsApp</a>
+        </div>
       </div>
-    </div>
 
-    <img src="assets/SergioProgramming.jpg" alt="Foto de Sergio Herrera" class="hero-img">
-  </div>
-</section>
+      <img src="assets/SergioProgramming.jpg" alt="Foto de Sergio Herrera" class="hero-img">
+    </div>
+  </section>
 
 
   <section class="projects" id="proyectos">
@@ -53,8 +53,8 @@
       <div class="project-card">
         <h3>QuickBites</h3>
         <p>Plataforma web para un restaurante de comida rápida. Permite explorar el menú, seleccionar productos,
-           agregar extras y visualizar el resumen del pedido en tiempo real. 
-           Implementa un diseño moderno y adaptable a móviles. 
+          agregar extras y visualizar el resumen del pedido en tiempo real.
+          Implementa un diseño moderno y adaptable a móviles.
         </p>
         <img class="project-img" src="assets/quickBites.png" alt="QuickBites">
         <a href="https://seruhio30.github.io/Web-QuickBites-Frond-End/" target="_blank">Ver Sitio</a>
@@ -63,7 +63,8 @@
       <div class="project-card">
         <h3>Barbería Alura</h3>
         <p>
-          Sitio informativo para una barbería con diseño responsivo. Incluye secciones de servicios, promociones y contacto. 
+          Sitio informativo para una barbería con diseño responsivo. Incluye secciones de servicios, promociones y
+          contacto.
           Proyecto desarrollado en el programa ONE de Oracle utilizando HTML, CSS y JavaScript.
         </p>
         <img class="project-img" src="assets/barberia.png" alt="Barbería Alura">
@@ -74,8 +75,8 @@
         <h3>Rafting</h3>
         <p>
           Página web para una empresa de deportes extremos.
-           Presenta información sobre tours de rafting, galería e información de contacto.
-           Desarrollada con HTML, CSS, JavaScript y backend en Python.
+          Presenta información sobre tours de rafting, galería e información de contacto.
+          Desarrollada con HTML, CSS, JavaScript y backend en Python.
         </p>
         <img class="project-img" src="assets/rafting-min.png" alt="Rafting">
         <a href="https://seruhio30.github.io/BYU-WDD130/wwr/index.html" target="_blank">Ver Sitio</a>
@@ -85,7 +86,7 @@
         <h3>Survivor72</h3>
         <p>
           Aplicación enfocada en la preparación ante emergencias. Incluye contenidos educativos,
-           registro de productos esenciales y consulta de recursos. 
+          registro de productos esenciales y consulta de recursos.
           Construida con HTML, CSS, Java + Spring Boot y base de datos MySQL.
         </p>
         <img class="project-img" src="assets/survivor72Render.png" alt="Survivor72">
@@ -96,7 +97,7 @@
         <h3>ILesco</h3>
         <p>
           Plataforma para el aprendizaje del lenguaje de señas costarricense (LESCO). Contiene menú dinámico,
-           videos instructivos y enlaces a redes sociales. Desarrollada con HTML, CSS y JavaScript.
+          videos instructivos y enlaces a redes sociales. Desarrollada con HTML, CSS y JavaScript.
         </p>
         <img class="project-img" src="assets/ILesco.png" alt="ILesco">
         <a href="https://seruhio30.github.io/ILesco/" target="_blank">Ver Sitio</a>
@@ -125,24 +126,28 @@
         <label for="telefono">Teléfono</label>
         <input type="text" id="telefono">
       </div>
-       <div class="form-group">
-            <label for="categoria">Área de interés</label>
-            <select id="categoria" name="categoria">
-              <option value="otros">Escoge una opcion de interes</option>
-              <option value="backend">Desarrollo Backend</option>
-              <option value="api">Integración de APIs</option>
-              <option value="otros">Pagina Web</option>
-              <option value="otros">Landing Page</option>
-              <option value="otros">Otros</option>
-            </select>
-          </div>
+      <div class="form-group">
+        <label for="categoria">Área de interés</label>
+        <select id="categoria" name="categoria">
+          <option value="otros">Escoge una opcion de interes</option>
+          <option value="backend">Desarrollo Backend</option>
+          <option value="api">Integración de APIs</option>
+          <option value="otros">Pagina Web</option>
+          <option value="otros">Landing Page</option>
+          <option value="otros">Otros</option>
+        </select>
+      </div>
 
       <div class="form-group">
         <label for="mensaje">Mensaje</label>
         <textarea id="mensaje" rows="5" required></textarea>
       </div>
       <button type="submit" class="btn">Enviar mensaje</button>
+      <div id="loader" class="loader hidden"></div>
+      <div id="success-check" class="success-check hidden">✔</div>
+
     </form>
+
   </section>
   <footer>
     <div class="container">
@@ -153,14 +158,9 @@
 
   <script src="script/index.js" defer></script>
 
-  <a
-  href="https://wa.me/50687733663"
-  class="whatsapp-float"
-  target="_blank"
-  aria-label="Chat en WhatsApp"
->
-  <img src="assets/whatsapp.svg" alt="WhatsApp" />
-</a>
+  <a href="https://wa.me/50687733663" class="whatsapp-float" target="_blank" aria-label="Chat en WhatsApp">
+    <img src="assets/whatsapp.svg" alt="WhatsApp" />
+  </a>
 
 </body>
 
