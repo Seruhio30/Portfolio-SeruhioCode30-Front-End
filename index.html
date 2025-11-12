@@ -16,147 +16,126 @@
   <header>
     <div class="container header">
       <h1 class="logo">SeruhioCode30</h1>
-      <!-- Botón de menú hamburguesa -->
-      <button id="hamburger" aria-label="Toggle navigation"></button>
-      <nav id="nav-menu" class="nav">
+      <button id="hamburger"></button>
+      <nav id="nav-menu">
         <ul class="nav-links">
+          <li><a href="#inicio">Inicio</a></li>
           <li><a href="#proyectos">Proyectos</a></li>
-          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#about">Sobre mí</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-content">
-        <div class="hero-text">
-          <h2>Desarrollador Web</h2>
-          <p>
-            Creo sitios modernos, rápidos y funcionales utilizando HTML, CSS y JavaScript, con un backend sólido en
-            Java y Spring Boot. Me apasiona construir soluciones digitales útiles para emprendedores
-            y pequeñas empresas.
-          </p>
-          <div class="social-links">
-            <a class="social-links-enlace" href="https://github.com/Seruhio30" target="_blank">
-              <img src="assets/github.png" alt="github pages" />
-              GitHub
-            </a>
-
-            <a class="social-links-enlace" href="https://www.linkedin.com/in/sergio-herrera-rivera" target="_blank">
-              <img src="assets/linkedin.png" alt="linkedin page" />
-              LinkedIn</a>
-
-          </div>
-        </div>
-        <img src="assets/SergioProgramming.jpg" alt="Foto de Sergio Herrera" class="hero-img" />
-      </div>
-    </section>
-
-    <section class="projects" id="proyectos">
-      <h2>Proyectos destacados</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>Barbería Alura</h3>
-          <p> Barberia Alura es un proyecto creado en el curso ONE de Oracle se uso HTML, CSS y JavaScript.</p>
-          <img class="project-img" src="assets/barberia.png" alt="barberia" />
-          <a href="https://seruhio30.github.io/Barberia/aula%201/index.html">Ver Sitio</a>
-        </div>
-
-        <div class="project-card">
-          <h3>Rafting</h3>
-          <p>Proyecto de aventura realizado para BYU Usando HTML, CSS JavaScript y Pyton en su back-end.</p>
-          <img class="project-img" src="assets/rafting-min.png" alt="rafting" />
-          <a href="https://seruhio30.github.io/BYU-WDD130/wwr/index.html">Ver Sitio</a>
+  <section class="hero" id="inicio">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h2>Hola, soy Sergio Herrera</h2>
+        <p>Desarrollador web enfocado en crear experiencias digitales limpias, funcionales y adaptables.</p>
+        <div class="social-links">
+          <a href="https://github.com/Seruhio30" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/sergio-herrera-rivera" target="_blank">LinkedIn</a>
         </div>
       </div>
+      <img src="assets/SergioProgramming.jpg" alt="Foto de Sergio Herrera" class="hero-img">
+    </div>
+  </section>
 
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>Survivor72</h3>
-          <p>Sitio Web para la preparacion ante emergencias, cuenta con 2 paginas construidas con HTML y CSS y un
-            back-end con Java Y Spring Boot, una base de datos en MYSQL.</p>
-          <img class="project-img" src="assets/survivor72Render.png" alt="survivor72" />
-          <a href="https://seruhio30.github.io/Survival-front-end/">Ver Sitio</a>
-        </div>
+  <section class="projects" id="proyectos">
+    <h2>Proyectos destacados</h2>
+    <div class="projects-grid">
 
-        <div class="project-card">
-          <h3>ILesco</h3>
-          <p>Proyecto pagina Web para la enseñanza del LESCO, menu dinamico, videos, enlaces a las redes sociales de la
-            compañia, boton llamado a la accion al WhatsApp, su utilizo HTML, CSS JavaScript.</p>
-          <img class="project-img" src="assets/ILesco.png" alt="ILESCO" />
-          <a href="https://seruhio30.github.io/ILesco/">Ver Sitio</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="about" id="sobre-mi">
-      <div class="container">
-        <h2>Sobre mí</h2>
-        <p>
-          Soy Sergio, desarrollador web autodidacta con una pasión por crear soluciones digitales que realmente aporten
-          valor.
-          Me especializo en el desarrollo de sitios web funcionales, combinando un frontend claro y atractivo con un
-          backend
-          eficiente y bien estructurado. Siempre estoy aprendiendo y perfeccionando mis habilidades para ofrecer
-          experiencias
-          web prácticas, accesibles y modernas.
+      <div class="project-card">
+        <h3>QuickBites</h3>
+        <p>Plataforma web para un restaurante de comida rápida. Permite explorar el menú, seleccionar productos,
+           agregar extras y visualizar el resumen del pedido en tiempo real. 
+           Implementa un diseño moderno y adaptable a móviles. 
         </p>
+        <img class="project-img" src="assets/quickBites.png" alt="QuickBites">
+        <a href="https://seruhio30.github.io/Web-QuickBites-Frond-End/" target="_blank">Ver Sitio</a>
       </div>
-    </section>
 
-    <section class="contact" id="contacto">
-      <div class="container">
-        <h2>Contacto</h2>
-        <p>¿Querés trabajar conmigo? Enviame un mensaje usando el formulario o por WhatsApp.</p>
-        <form action="" class="contact-form" id="formulario-de-contacto">
-          <div class="form-group">
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" required>
-          </div>
-
-          <div class="form-group">
-            <label for="email">Correo electrónico</label>
-            <input type="email" id="email" name="email" placeholder="aaaa@aaaa.com" required>
-          </div>
-
-          <div class="form-group">
-            <label for="telefono">Teléfono (Opcional)</label>
-            <input type="tel" id="telefono" name="telefono">
-          </div>
-
-          <div class="form-group">
-            <label for="categoria">Área de interés</label>
-            <select id="categoria" name="categoria">
-              <option value="otros">Escoge una opcion de interes</option>
-              <option value="backend">Desarrollo Backend</option>
-              <option value="api">Integración de APIs</option>
-              <option value="otros">Pagina Web</option>
-              <option value="otros">Landing Page</option>
-              <option value="otros">Otros</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-          </div>
-
-          <button type="submit" class="btn">Enviar Solicitud</button>
-          <p id="resultado"></p>
-        </form>
-
-
-        <a href="https://wa.me/50687733663" target="_blank" class="btn whatsapp-btn">
-          Contactar por WhatsApp
-        </a>
-
-
+      <div class="project-card">
+        <h3>Barbería Alura</h3>
+        <p>
+          Sitio informativo para una barbería con diseño responsivo. Incluye secciones de servicios, promociones y contacto. 
+          Proyecto desarrollado en el programa ONE de Oracle utilizando HTML, CSS y JavaScript.
+        </p>
+        <img class="project-img" src="assets/barberia.png" alt="Barbería Alura">
+        <a href="https://seruhio30.github.io/Barberia/aula%201/index.html" target="_blank">Ver Sitio</a>
       </div>
-    </section>
-  </main>
 
+      <div class="project-card">
+        <h3>Rafting</h3>
+        <p>
+          Página web para una empresa de deportes extremos.
+           Presenta información sobre tours de rafting, galería e información de contacto.
+           Desarrollada con HTML, CSS, JavaScript y backend en Python.
+        </p>
+        <img class="project-img" src="assets/rafting-min.png" alt="Rafting">
+        <a href="https://seruhio30.github.io/BYU-WDD130/wwr/index.html" target="_blank">Ver Sitio</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Survivor72</h3>
+        <p>
+          Aplicación enfocada en la preparación ante emergencias. Incluye contenidos educativos,
+           registro de productos esenciales y consulta de recursos. 
+          Construida con HTML, CSS, Java + Spring Boot y base de datos MySQL.
+        </p>
+        <img class="project-img" src="assets/survivor72Render.png" alt="Survivor72">
+        <a href="https://seruhio30.github.io/Survival-front-end/" target="_blank">Ver Sitio</a>
+      </div>
+
+      <div class="project-card">
+        <h3>ILesco</h3>
+        <p>
+          Plataforma para el aprendizaje del lenguaje de señas costarricense (LESCO). Contiene menú dinámico,
+           videos instructivos y enlaces a redes sociales. Desarrollada con HTML, CSS y JavaScript.
+        </p>
+        <img class="project-img" src="assets/ILesco.png" alt="ILesco">
+        <a href="https://seruhio30.github.io/ILesco/" target="_blank">Ver Sitio</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>Sobre mí</h2>
+    <p>Soy un desarrollador apasionado por el código limpio y las soluciones prácticas. Me especializo en desarrollo
+      full stack con experiencia en Java, Spring Boot, HTML, CSS y JavaScript.</p>
+  </section>
+
+  <section class="contact" id="contacto">
+    <h2>Contacto</h2>
+    <form id="formulario-de-contacto" class="contact-form">
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" required>
+      </div>
+      <div class="form-group">
+        <label for="telefono">Teléfono</label>
+        <input type="text" id="telefono">
+      </div>
+      <div class="form-group">
+        <label for="categoria">Categoría</label>
+        <select id="categoria" required>
+          <option value="proyecto">Proyecto</option>
+          <option value="colaboracion">Colaboración</option>
+          <option value="otros">Otros</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn">Enviar mensaje</button>
+    </form>
+  </section>
   <footer>
     <div class="container">
       <p>&copy; 2025 <a href="https://seruhio30.github.io/Portfolio-SeruhioCode30-Front-End/"></a>SeruhioCode30 | Todos
