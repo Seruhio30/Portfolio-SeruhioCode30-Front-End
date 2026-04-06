@@ -1,130 +1,146 @@
 document.addEventListener("DOMContentLoaded", function () {
-
+    // Espera a que el HTML esté completamente cargado antes de buscar elementos del DOM
     setupHamburgerMenu();
 
-    document.getElementById("formulario-de-contacto").addEventListener("submit", async function (event) {
-        event.preventDefault(); // ✅ Evita que la página se recargue
+    // Intercepta el envío del formulario para manejarlo con JavaScript
+    document
+        .getElementById("formulario-de-contacto")
+        .addEventListener("submit", async function (event) {
+            event.preventDefault(); // Evita el envío tradicional del formulario
 
-        const resultado = await enviarCorreo(); // ✅ Espera el resultado de `enviarCorreo()`
-        document.getElementById("resultado").innerText = resultado; // ✅ Muestra el mensaje en pantalla
+            // Ejecuta el envío al backend y muestra el resultado en pantalla
+            const resultado = await enviarCorreo();
+            document.getElementById("resultado").innerText = resultado;
 
-        setTimeout(() => {
-            document.getElementById("resultado").innerText = ""; // ✅ Borra el mensaje después de 5 segundos
-        }, 5000); // Tiempo en milisegundos (5000 = 5 segundos)
-
-        this.reset(); //
-        // 
-        setupHamburgerMenu();
-    });
+            // Limpia el mensaje visual después de unos segundos
+            setTimeout(() => {
+                const resultadoEl = document.getElementById("resultado");
+                if (resultadoEl) resultadoEl.innerText = "";
+            }, 5000);
+        });
 });
 
 async function enviarCorreo() {
-
+    // Elementos visuales usados para feedback al usuario
     const loader = document.getElementById("loader");
     const successCheck = document.getElementById("success-check");
     const submitBtn = document.querySelector("button[type='submit']");
 
-    // ✅ Obtener IP y URL
+    // Datos extra que acompañan el formulario
     const ip = await obtenerIP();
     const url = window.location.href;
 
-    // ✅ Datos formulario
+    // Construye el objeto que se enviará al backend
     const emailData = {
         nombre: document.getElementById("nombre").value,
         remitente: document.getElementById("email").value,
         telefono: document.getElementById("telefono").value || "No proporcionado",
         categoria: document.getElementById("categoria").value,
         contenido: document.getElementById("mensaje").value,
-        ip,
-        url
+        ip: ip,
+        url: url
     };
 
-    // ✅ Mostrar cargando
+    // Útil para depuración: permite verificar exactamente qué datos salen del front
+    console.log("Datos enviados al backend:", emailData);
+
+    // Estado visual mientras la petición está en proceso
     loader.classList.remove("hidden");
     submitBtn.classList.add("loading");
     submitBtn.innerText = "Enviando...";
     submitBtn.disabled = true;
 
     try {
+        // Envía el formulario al backend como JSON
         const respuesta = await fetch("https://portafolio-back-end.fly.dev/correo/enviar", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+                "Content-Type": "application/json"
+            },
             body: JSON.stringify(emailData)
         });
 
-        if (!respuesta.ok) throw new Error();
+        // Lee la respuesta del servidor para depuración o confirmación
+        const textoRespuesta = await respuesta.text();
+        console.log("Respuesta del servidor:", textoRespuesta);
 
-        // ✅ Ocultar loader
+        // Si el servidor responde con error, se fuerza la salida al catch
+        if (!respuesta.ok) {
+            throw new Error(`Error ${respuesta.status}: ${textoRespuesta}`);
+        }
+
+        // Actualiza la interfaz cuando el envío fue exitoso
         loader.classList.add("hidden");
-
-        // ✅ Mostrar check ✔
         successCheck.classList.remove("hidden");
 
-        // ✅ Cambiar botón a exitoso
         submitBtn.classList.remove("loading");
         submitBtn.classList.add("success");
-        submitBtn.innerText = "¡Enviado! ✔";
+        submitBtn.innerText = "Enviado correctamente";
 
-        // ✅ ✅ LIMPIAR FORM
+        // Limpia el formulario solo si el envío realmente funcionó
         document.getElementById("formulario-de-contacto").reset();
 
+        // Restaura el botón a su estado normal
         setTimeout(() => {
-            // ocultar ✔
             successCheck.classList.add("hidden");
-
-            // Botón vuelve a la normalidad
             submitBtn.classList.remove("success");
             submitBtn.innerText = "Enviar mensaje";
             submitBtn.disabled = false;
         }, 3000);
 
-        return await respuesta.text();
+        return textoRespuesta;
 
     } catch (err) {
+        // Muestra en consola el detalle del error para facilitar depuración
+        console.error("Error al enviar formulario:", err);
 
-        // ✅ Ocultar loader
+        // Estado visual en caso de fallo
         loader.classList.add("hidden");
-
-        // Botón indica error
         submitBtn.classList.remove("loading");
         submitBtn.disabled = false;
-        submitBtn.innerText = "Error ❌";
+        submitBtn.innerText = "Error al enviar";
 
-        alert("❌ Hubo un error al enviar el formulario.");
+        alert("Hubo un error al enviar el formulario.");
 
+        // Restaura el texto del botón después del error
         setTimeout(() => {
             submitBtn.innerText = "Enviar mensaje";
         }, 2500);
 
-        return "Error";
+        return "Error al enviar el formulario";
     }
 }
+
 async function obtenerIP() {
-  try {
-    const r = await fetch("https://api.ipify.org?format=json");
-    const data = await r.json();
-    return data.ip;
-  } catch {
-    return "No disponible";
-  }
+    try {
+        // Consulta un servicio externo para obtener la IP pública del usuario
+        const r = await fetch("https://api.ipify.org?format=json");
+        const data = await r.json();
+        return data.ip;
+    } catch (error) {
+        // Si falla, no bloquea el envío del formulario
+        console.error("Error obteniendo IP:", error);
+        return "No disponible";
+    }
 }
 
-
-
 function setupHamburgerMenu() {
-    const hamButton = document.querySelector('#hamburger');
-    const navigation = document.querySelector('#nav-menu');
+    const hamButton = document.querySelector("#hamburger");
+    const navigation = document.querySelector("#nav-menu");
 
+    // Solo agrega funcionalidad si ambos elementos existen en el DOM
     if (hamButton && navigation) {
-        hamButton.addEventListener('click', () => {
-            navigation.classList.toggle('open');
-            hamButton.classList.toggle('open');
+        // Abre o cierra el menú al tocar el botón hamburguesa
+        hamButton.addEventListener("click", () => {
+            navigation.classList.toggle("open");
+            hamButton.classList.toggle("open");
         });
 
-        document.addEventListener('click', (event) => {
+        // Cierra el menú si el usuario hace click fuera de él
+        document.addEventListener("click", (event) => {
             if (!navigation.contains(event.target) && !hamButton.contains(event.target)) {
-                navigation.classList.remove('open');
-                hamButton.classList.remove('open');
+                navigation.classList.remove("open");
+                hamButton.classList.remove("open");
             }
         });
     }

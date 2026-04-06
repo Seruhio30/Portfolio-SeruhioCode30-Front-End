@@ -176,7 +176,7 @@ header {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* grid responsivo */
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -186,28 +186,52 @@ header {
   background-color: var(--color-hover);
   border-radius: 10px;
   padding: 1rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
 .project-card h3 {
   color: var(--color-terciario);
-  margin-bottom: 0.5rem;
+  margin: 1rem 0 0.5rem;
+  font-size: 1.4rem;
 }
 
-.project-card p { margin-bottom: 1rem; }
+.project-card p {
+  color: #f1f1f1; /* texto claro para fondo oscuro */
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  flex-grow: 1; /* empuja el botón hacia abajo */
+}
 
 .project-img {
   width: 100%;
+  height: auto; /* mantiene proporción original */
+  max-height: 250px; /* evita que se pase del contenedor */
+  object-fit: contain; /* muestra la imagen completa dentro del espacio */
   border-radius: 10px;
 }
 
 .project-card a {
-  color: var(--color-terciario);
-  font-weight: bold;
+  margin-top: auto; /* siempre al fondo */
   text-decoration: none;
-  margin-top: auto;
+  background: var(--color-terciario);
+  color: #fff;
+  font-weight: bold;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  display: inline-block;
+}
+
+.project-card a:hover {
+  background: #0056b3; /* tono más oscuro en hover */
 }
 
 /************* About *************/

@@ -1,0 +1,22 @@
+Esto es una pruba para los comandos de < > >>, que chulada
+con >> esto puedo meter mas texto.
+.
+|-- Prueba.txt
+|-- README.md
+|-- assets
+|   |-- ILesco.png
+|   |-- SergioProgramming.jpg
+|   |-- barberia.png
+|   |-- github.png
+|   |-- linkedin.png
+|   |-- quickBites.png
+|   |-- rafting-min.png
+|   |-- survivor72Render.png
+|   `-- whatsapp.svg
+|-- index.html
+|-- script
+|   `-- index.js
+`-- styles
+    `-- style.css
+
+3 directories, 14 files
