@@ -145,6 +145,14 @@ header {
   text-align: center;
 }
 
+.hero-kicker {
+  margin-bottom: 0.75rem;
+  color: var(--color-secundario);
+  font-size: 0.95rem;
+  font-weight: 600;
+  opacity: 0.82;
+}
+
 .hero-text h2 {
   font-size: 2rem;
   color: var(--color-terciario);
@@ -158,11 +166,12 @@ header {
   font-size: 1.05rem;
 }
 
-.social-links {
+.hero-actions {
   text-align: center;
+  margin-bottom: 1.5rem;
 }
 
-.social-links a {
+.hero-actions a {
   display: inline-block;
   margin: 0.5rem;
   padding: 0.75rem 1.1rem;
@@ -174,14 +183,47 @@ header {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.social-links a:hover {
+.hero-actions a:hover {
   background-color: var(--color-primario);
   transform: translateY(-2px);
 }
 
+.hero-actions .btn-whatsapp {
+  background-color: var(--color-terciario);
+  color: var(--color-primario);
+}
+
+.hero-actions .btn-whatsapp:hover {
+  background-color: #11bde3;
+}
+
+.hero-actions .btn-secondary {
+  background-color: transparent;
+}
+
+.hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  list-style: none;
+}
+
+.hero-trust li {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  color: var(--color-secundario);
+  font-size: 0.9rem;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
 .hero-img {
   width: 250px;
-  border-radius: 50%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 18px;
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
 }
 
@@ -481,8 +523,12 @@ footer {
     margin: 0 0 1.5rem;
   }
 
-  .social-links {
+  .hero-actions {
     text-align: left;
+  }
+
+  .hero-trust {
+    justify-content: flex-start;
   }
 
   .projects-grid {
