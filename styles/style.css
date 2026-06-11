@@ -674,7 +674,7 @@ footer a {
 }
 footer a:hover {
   text-decoration: underline;
-
+}
 /************* Responsive *************/
 @media (min-width: 768px) {
   #nav-menu {
