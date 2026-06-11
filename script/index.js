@@ -64,7 +64,7 @@ async function enviarCorreo() {
         setTimeout(() => {
             successCheck.classList.add("hidden");
             submitBtn.classList.remove("success");
-            submitBtn.innerText = "Enviar mensaje";
+            submitBtn.innerText = "Solicitar información";
             submitBtn.disabled = false;
         }, 3000);
 
@@ -79,7 +79,7 @@ async function enviarCorreo() {
         alert("Hubo un error al enviar el formulario.");
 
         setTimeout(() => {
-            submitBtn.innerText = "Enviar mensaje";
+            submitBtn.innerText = "Solicitar información";
         }, 2500);
     }
 }
