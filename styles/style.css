@@ -191,10 +191,12 @@ header {
 .hero-actions .btn-whatsapp {
   background-color: var(--color-terciario);
   color: var(--color-primario);
+  box-shadow: 0 10px 24px rgba(34, 212, 253, 0.22);
 }
 
 .hero-actions .btn-whatsapp:hover {
   background-color: #11bde3;
+  box-shadow: 0 14px 30px rgba(34, 212, 253, 0.32);
 }
 
 .hero-actions .btn-secondary {
