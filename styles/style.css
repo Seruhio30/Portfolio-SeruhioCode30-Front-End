@@ -45,6 +45,14 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.header > img {
+  width: min(210px, 68vw);
+  height: auto;
+  display: block;
 }
 
 .logo {
@@ -75,15 +83,18 @@ header {
 
 /* Botón hamburguesa */
 #hamburger {
-  font-size: 1.8rem;
-  background: none;
-  border: none;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.65rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
   color: var(--color-terciario);
   cursor: pointer;
-  position: absolute;
-  top: 1rem;
-  right: 2rem;
-  z-index: 10;
+  flex: 0 0 auto;
 }
 
 .nav-links {
@@ -109,7 +120,19 @@ header {
 }
 
 #hamburger.open::before {
-  content: "❎";
+  content: "×";
+}
+
+#hamburger:focus-visible,
+.nav-links a:focus-visible,
+.hero-actions a:focus-visible,
+.case-actions a:focus-visible,
+.lab-link:focus-visible,
+.professional-links a:focus-visible,
+.contact-links a:focus-visible,
+footer a:focus-visible {
+  outline: 3px solid var(--color-terciario);
+  outline-offset: 3px;
 }
 
 #nav-menu.open .nav-links {
@@ -136,7 +159,7 @@ header {
 
 .hero-content {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   align-items: center;
   gap: 2.5rem;
 }
@@ -153,11 +176,11 @@ header {
   opacity: 0.82;
 }
 
-.hero-text h2 {
-  font-size: 2rem;
+.hero-text h1 {
+  font-size: clamp(2rem, 7vw, 2.7rem);
   color: var(--color-terciario);
   margin-bottom: 1rem;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 .hero-text p {
@@ -260,7 +283,7 @@ header {
 
 .featured-case {
   background-color: var(--color-hover);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(34, 212, 253, 0.28);
   border-radius: 14px;
   padding: 1.35rem;
   text-align: left;
@@ -373,6 +396,13 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.06);
   padding: 1.2rem;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.case-card .case-actions {
+  margin-top: auto;
+  padding-top: 0.25rem;
 }
 
 .case-card .project-img {
@@ -506,9 +536,33 @@ header {
 }
 
 .about p {
-  max-width: 750px;
-  margin: auto;
+  max-width: 780px;
+  margin: 0 auto 1rem;
   font-size: 1.05rem;
+}
+
+.professional-links,
+.contact-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.professional-links a,
+.contact-links a {
+  color: var(--color-terciario);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid rgba(34, 212, 253, 0.35);
+  border-radius: 8px;
+}
+
+.professional-links a:hover,
+.contact-links a:hover {
+  background-color: rgba(34, 212, 253, 0.08);
 }
 
 /************* Contact *************/
@@ -521,6 +575,12 @@ header {
   color: var(--color-terciario);
   margin-bottom: 1rem;
   font-size: 2.3rem;
+}
+
+.contact-intro {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.05rem;
 }
 
 .contact-form {
@@ -591,6 +651,10 @@ header {
 .btn-whatsapp:hover {
   background-color: var(--color-primario);
   transform: translateY(-2px);
+}
+
+.contact .btn-whatsapp {
+  margin-top: 1.25rem;
 }
 
 /* Botón flotante de WhatsApp */
@@ -679,22 +743,6 @@ footer a:hover {
 }
 /************* Responsive *************/
 @media (min-width: 768px) {
-  #nav-menu {
-    display: block;
-    width: auto;
-    padding-bottom: 0;
-  }
-
-  .nav-links {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-  }
-
-  #hamburger {
-    display: none;
-  }
-
   .hero-content {
     flex-direction: row;
     justify-content: space-between;
@@ -740,8 +788,34 @@ footer a:hover {
   }
 }
 
+@media (min-width: 900px) {
+  .header {
+    flex-wrap: nowrap;
+  }
+
+  .header > img {
+    width: 200px;
+  }
+
+  #nav-menu {
+    display: block;
+    width: auto;
+    padding-bottom: 0;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 1.4rem;
+  }
+
+  #hamburger {
+    display: none;
+  }
+}
+
 @media (min-width: 1024px) {
-  .hero-text h2 {
+  .hero-text h1 {
     font-size: 2.7rem;
   }
 

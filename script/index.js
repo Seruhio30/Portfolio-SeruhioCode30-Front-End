@@ -99,17 +99,39 @@ function setupHamburgerMenu() {
     const hamButton = document.querySelector("#hamburger");
     const navigation = document.querySelector("#nav-menu");
 
-    if (hamButton && navigation) {
-        hamButton.addEventListener("click", () => {
-            navigation.classList.toggle("open");
-            hamButton.classList.toggle("open");
-        });
-
-        document.addEventListener("click", (event) => {
-            if (!navigation.contains(event.target) && !hamButton.contains(event.target)) {
-                navigation.classList.remove("open");
-                hamButton.classList.remove("open");
-            }
-        });
+    if (!hamButton || !navigation) {
+        return;
     }
+
+    function setMenuState(isOpen) {
+        navigation.classList.toggle("open", isOpen);
+        hamButton.classList.toggle("open", isOpen);
+        hamButton.setAttribute("aria-expanded", String(isOpen));
+        hamButton.setAttribute(
+            "aria-label",
+            isOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"
+        );
+    }
+
+    hamButton.addEventListener("click", () => {
+        const isOpen = hamButton.getAttribute("aria-expanded") === "true";
+        setMenuState(!isOpen);
+    });
+
+    navigation.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => setMenuState(false));
+    });
+
+    document.addEventListener("click", (event) => {
+        if (!navigation.contains(event.target) && !hamButton.contains(event.target)) {
+            setMenuState(false);
+        }
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            setMenuState(false);
+            hamButton.focus();
+        }
+    });
 }
