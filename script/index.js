@@ -16,7 +16,6 @@ async function enviarCorreo() {
     const successCheck = document.getElementById("success-check");
     const submitBtn = document.querySelector("button[type='submit']");
 
-    const ip = await obtenerIP();
     const url = window.location.href;
 
     const emailData = {
@@ -25,11 +24,8 @@ async function enviarCorreo() {
         telefono: document.getElementById("telefono").value || "No proporcionado",
         categoria: document.getElementById("categoria").value,
         contenido: document.getElementById("mensaje").value,
-        ip: ip,
         url: url
     };
-
-    console.log("Datos enviados al backend:", emailData);
 
     loader.classList.remove("hidden");
     submitBtn.classList.add("loading");
@@ -81,17 +77,6 @@ async function enviarCorreo() {
         setTimeout(() => {
             submitBtn.innerText = "Solicitar información";
         }, 2500);
-    }
-}
-
-async function obtenerIP() {
-    try {
-        const r = await fetch("https://api.ipify.org?format=json");
-        const data = await r.json();
-        return data.ip;
-    } catch (error) {
-        console.error("Error obteniendo IP:", error);
-        return "No disponible";
     }
 }
 
