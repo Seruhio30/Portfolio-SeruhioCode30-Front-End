@@ -5,9 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Sergio Herrera crea páginas web modernas para negocios, landing pages y soluciones web con HTML, CSS, JavaScript y Spring Boot.">
-  <title>Sergio Herrera | Desarrollo Web para Negocios</title>
-  <link rel="stylesheet" href="styles/style.css" />
+    content="Portfolio de Sergio Herrera, desarrollador web full-stack. Desarrollo sitios, aplicaciones y soluciones web con frontend, Java, Spring Boot, APIs y bases de datos.">
+  <title>Sergio Herrera | Desarrollador Web Full-Stack</title>
+  <link rel="stylesheet" href="styles/style.css?v=20260820" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -24,8 +24,12 @@
   <header>
     <div class="container header">
 
-      <img src="assets/brand/sc30-logo-horizontal-transparent.png" alt="">
-      <button id="hamburger"></button>
+      <img src="assets/brand/sc30-logo-horizontal-transparent.png" alt="SeruhioCode30">
+      <button id="hamburger"
+        type="button"
+        aria-label="Abrir menú de navegación"
+        aria-controls="nav-menu"
+        aria-expanded="false"></button>
       <nav id="nav-menu">
         <ul class="nav-links">
           <li><a href="#inicio">Inicio</a></li>
@@ -41,34 +45,31 @@
   <section class="hero" id="inicio">
     <div class="container hero-content">
       <div class="hero-text">
-        <p class="hero-kicker">Desarrollo web freelance para negocios y emprendedores</p>
+        <p class="hero-kicker">Desarrollador web full-stack</p>
 
-
-        <h2>Creo páginas web profesionales para que tu negocio se vea confiable y consiga más clientes</h2>
+        <h1>Construyo soluciones web que conectan una buena experiencia con una base técnica sólida</h1>
 
         <p>
-          Soy Sergio Herrera, desarrollador web. Ayudo a negocios, emprendedores y profesionales independientes
-          a crear sitios web claros, modernos y adaptados a celular, con formularios de contacto, botones de WhatsApp
-          y una estructura pensada para convertir visitantes en consultas reales.
+          Soy Sergio Herrera. Desarrollo sitios, aplicaciones y sistemas web para resolver necesidades reales,
+          desde interfaces claras y responsivas hasta APIs, backend y bases de datos. Estoy disponible para
+          proyectos, colaboraciones técnicas, contratos y oportunidades dentro de equipos de desarrollo.
         </p>
 
         <div class="hero-actions">
           <a class="btn-whatsapp"
-            href="https://wa.me/50687733663?text=Hola%20Sergio,%20vi%20tu%20portafolio%20y%20quiero%20informaci%C3%B3n%20para%20un%20proyecto%20web"
-            target="_blank">Cotizar mi proyecto</a>
-          <a class="btn-secondary" href="#proyectos">Ver trabajos</a>
+            href="https://wa.me/50687733663?text=Hola%20Sergio,%20vi%20tu%20portafolio%20y%20quiero%20conversar%20sobre%20un%20proyecto%20o%20colaboraci%C3%B3n"
+            target="_blank" rel="noopener noreferrer">Hablemos de tu proyecto</a>
+          <a class="btn-secondary" href="#proyectos">Ver proyectos</a>
         </div>
 
         <ul class="hero-trust">
-          <li>Páginas web responsivas</li>
-          <li>Contacto por WhatsApp o formulario</li>
-          <li>Soluciones para negocios reales</li>
+          <li>Frontend y experiencia responsive</li>
+          <li>Java, Spring Boot y APIs</li>
+          <li>Bases de datos y soluciones completas</li>
         </ul>
       </div>
 
-      <img src="assets/hero.jpg" alt="Foto de Sergio Herrera" class="hero-img">
-
-
+      <img src="assets/hero.jpg" alt="Sergio Herrera, desarrollador web full-stack" class="hero-img">
     </div>
   </section>
 
@@ -114,173 +115,224 @@
 
   <section class="projects" id="proyectos">
     <div class="container">
-      <h2>Casos de estudio orientados a negocio</h2>
+      <h2>Proyectos destacados</h2>
       <p class="projects-intro">
-        Esta sección está organizada para mostrar problema, solución y valor de negocio por proyecto. Cuando el
-        trabajo es demostrativo, se indica de forma transparente para mantener confianza con potenciales clientes.
+        Una selección de proyectos que muestran cómo trabajo frontend, backend y producto.
+        La prioridad está en el problema que resuelve cada solución y en las capacidades técnicas que demuestra.
       </p>
 
       <article class="featured-case">
         <div class="case-hero">
-          <img class="project-img" src="assets/verboLab.png" alt="Vista previa de VerboLab">
           <div>
             <div class="case-badges">
-              <span class="case-badge">Proyecto destacado</span>
-              <span class="case-badge case-badge-outline">Producto fullstack en desarrollo</span>
+              <span class="case-badge">Proyecto principal</span>
+              <span class="case-badge case-badge-outline">Aplicación web</span>
             </div>
-            <h3>VerboLab · Plataforma para practicar portugués brasileño</h3>
-            <p class="case-meta">Rol: fullstack developer + UX/UI | Stack: JavaScript, Java Spring Boot, PostgreSQL,
-              Vercel y Render</p>
+            <h3>Survival72 · Preparación ante emergencias</h3>
+            <p class="case-meta">Java · Spring Boot · MySQL · desarrollo web full-stack</p>
           </div>
         </div>
+
         <ul class="case-points">
-          <li><strong>Problema:</strong> muchas personas hispanohablantes estudian portugués, pero se les dificulta
-            dominar verbos, conjugaciones y estructuras reales de uso.</li>
-          <li><strong>Solución:</strong> diseño y desarrollo de una app de práctica guiada enfocada en verbos, tiempos
-            verbales, pronombres, contracciones y vocabulario por nivel.</li>
-          <li><strong>Valor de producto:</strong> convierte contenido gramatical complejo en ejercicios claros,
-            progresivos y pensados para mejorar fluidez real.</li>
-          <li><strong>Valor técnico:</strong> proyecto estructurado como producto web fullstack, con frontend, backend,
-            base de datos, despliegue y documentación profesional.</li>
+          <li>
+            <strong>Qué es:</strong> una solución web enfocada en preparación ante emergencias y acceso organizado
+            a información útil.
+          </li>
+          <li>
+            <strong>Qué problema aborda:</strong> facilita encontrar y organizar contenido de preparación que puede
+            resultar disperso o difícil de consultar.
+          </li>
+          <li>
+            <strong>Qué construí:</strong> una experiencia web conectada con una base técnica que incluye backend,
+            persistencia de datos y funcionalidades más allá de una página estática.
+          </li>
+          <li>
+            <strong>Capacidades:</strong> Java, Spring Boot, MySQL y desarrollo de una solución web de extremo a extremo.
+          </li>
         </ul>
+
         <div class="case-actions">
-          <a href="#contacto">Quiero una solución similar</a>
-          <a class="case-cta-secondary" href="#contacto">Consultar sobre mi proyecto</a>
+          <a href="https://seruhio30.github.io/Survival-front-end/"
+            target="_blank" rel="noopener noreferrer">Ver demo</a>
+          <a class="case-cta-secondary"
+            href="https://github.com/Seruhio30/Survival-front-end"
+            target="_blank" rel="noopener noreferrer">Ver repositorio</a>
         </div>
       </article>
 
       <div class="case-grid">
         <article class="case-card">
-          <img class="project-img" src="assets/quickBites.png" alt="QuickBites">
+          <img class="project-img" src="assets/verboLab.png" alt="Vista previa de VerboLab">
           <div class="case-badges">
-            <span class="case-badge">Caso secundario</span>
-            <span class="case-badge case-badge-outline">Proyecto demostrativo</span>
+            <span class="case-badge">Producto propio</span>
+            <span class="case-badge case-badge-outline">Full-stack en desarrollo</span>
           </div>
-          <h3>QuickBites · Sitio web para restaurante</h3>
+          <h3>VerboLab · Práctica de portugués brasileño</h3>
+          <p class="case-meta">JavaScript · Java Spring Boot · PostgreSQL</p>
           <ul class="case-points">
-            <li><strong>Problema:</strong> negocios de comida rápida suelen depender solo de redes sociales y pierden
-              claridad al mostrar menú, promociones y opciones de pedido.</li>
-            <li><strong>Solución:</strong> landing comercial con menú visual, flujo de pedido y acceso directo a
-              contacto para facilitar la decisión del cliente.</li>
-            <li><strong>Valor de negocio:</strong> ayuda a presentar productos de forma clara y reduce pasos para que el
-              visitante consulte o compre.</li>
+            <li>
+              <strong>Qué es:</strong> una aplicación de práctica guiada para personas hispanohablantes que estudian
+              portugués brasileño.
+            </li>
+            <li>
+              <strong>Problema:</strong> practicar conjugaciones, tiempos verbales y otras estructuras complejas de
+              forma progresiva.
+            </li>
+            <li>
+              <strong>Qué construí:</strong> frontend, backend, persistencia y estructura de producto para una
+              experiencia de aprendizaje completa.
+            </li>
           </ul>
           <div class="case-actions">
-            <a href="https://seruhio30.github.io/Web-QuickBites-Frond-End/" target="_blank">Ver ejemplo en vivo</a>
-            <a class="case-cta-secondary" href="#contacto">Quiero algo similar</a>
-          </div>
-        </article>
-        <article class="case-card">
-          <img class="project-img" src="assets/barberia.png" alt="Barbería Alura">
-          <div class="case-badges">
-            <span class="case-badge">Caso secundario</span>
-            <span class="case-badge case-badge-outline">Proyecto demostrativo</span>
-          </div>
-          <h3>Barbería · Sitio informativo de servicios</h3>
-          <ul class="case-points">
-            <li><strong>Problema:</strong> barberías locales suelen tener información dispersa y sin una presentación
-              profesional de servicios.</li>
-            <li><strong>Solución:</strong> estructura clara por secciones (servicios, promociones y contacto) con diseño
-              limpio y responsive.</li>
-            <li><strong>Valor de negocio:</strong> mejora percepción de confianza y facilita que nuevos clientes
-              encuentren información clave en segundos.</li>
-          </ul>
-          <div class="case-actions">
-            <a href="https://seruhio30.github.io/Barberia/aula%201/index.html" target="_blank">Ver ejemplo en vivo</a>
-            <a class="case-cta-secondary" href="#contacto">Solicitar versión para negocio</a>
+            <a href="https://verbolab.app"
+              target="_blank" rel="noopener noreferrer">Ver demo</a>
           </div>
         </article>
 
         <article class="case-card">
-          <img class="project-img" src="assets/rafting-min.png" alt="Rafting">
           <div class="case-badges">
-            <span class="case-badge">Caso secundario</span>
-            <span class="case-badge case-badge-outline">Proyecto demostrativo</span>
+            <span class="case-badge">Aplicación web</span>
           </div>
-          <h3>Rafting · Página para tours de aventura</h3>
+          <h3>JobTrack · Seguimiento de búsqueda laboral</h3>
+          <p class="case-meta">Aplicación web · gestión de datos · MySQL</p>
           <ul class="case-points">
-            <li><strong>Problema:</strong> empresas de tours necesitan transmitir seguridad y emoción sin perder
-              claridad en la información.</li>
-            <li><strong>Solución:</strong> combinación de contenido visual, explicación de tours y contacto directo para
-              acelerar la decisión del visitante.</li>
-            <li><strong>Valor de negocio:</strong> mayor claridad comercial para convertir interés en consultas de
-              reserva con menos pasos.</li>
+            <li>
+              <strong>Qué es:</strong> una herramienta para organizar procesos de búsqueda laboral.
+            </li>
+            <li>
+              <strong>Problema:</strong> centralizar postulaciones y su estado para evitar un seguimiento disperso.
+            </li>
+            <li>
+              <strong>Qué construí:</strong> funcionalidades de acceso, seguimiento y gestión de estados conectadas
+              con persistencia de datos.
+            </li>
           </ul>
           <div class="case-actions">
-            <a href="https://seruhio30.github.io/BYU-WDD130/wwr/index.html" target="_blank">Ver ejemplo en vivo</a>
-            <a class="case-cta-secondary" href="#contacto">Quiero una web similar</a>
+            <a href="https://seruhio30.github.io/Job-Track-Application-Front-End/"
+              target="_blank" rel="noopener noreferrer">Ver demo</a>
+            <a class="case-cta-secondary"
+              href="https://github.com/Seruhio30/Job-Track-Application-Front-End"
+              target="_blank" rel="noopener noreferrer">Ver repositorio</a>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <img class="project-img" src="assets/quickBites.png" alt="Vista previa de QuickBites">
+          <div class="case-badges">
+            <span class="case-badge">Proyecto web</span>
+          </div>
+          <h3>QuickBites · Experiencia de pedido para restaurante</h3>
+          <p class="case-meta">Frontend web · flujo de pedido · interfaz responsive</p>
+          <ul class="case-points">
+            <li>
+              <strong>Qué es:</strong> una experiencia web para presentar productos y facilitar un flujo de pedido.
+            </li>
+            <li>
+              <strong>Problema:</strong> organizar menú, opciones y contacto en una experiencia más clara que una
+              presencia basada únicamente en redes sociales.
+            </li>
+            <li>
+              <strong>Qué construí:</strong> interfaz responsive, presentación del menú y flujo orientado al pedido.
+            </li>
+          </ul>
+          <div class="case-actions">
+            <a href="https://seruhio30.github.io/Web-QuickBites-Frond-End/"
+              target="_blank" rel="noopener noreferrer">Ver demo</a>
+            <a class="case-cta-secondary"
+              href="https://github.com/Seruhio30/Web-QuickBites-Frond-End"
+              target="_blank" rel="noopener noreferrer">Ver repositorio</a>
           </div>
         </article>
       </div>
 
-      <section class="labs-section" aria-label="Laboratorio técnico">
-        <h3>Laboratorio técnico (no presentado como trabajo cliente)</h3>
+      <section class="labs-section" aria-labelledby="secondary-projects-title">
+        <h3 id="secondary-projects-title">Otros proyectos</h3>
         <p class="labs-intro">
-          Estos proyectos se mantienen para evidenciar amplitud técnica, pero están separados de los casos
-          comerciales para reforzar una percepción profesional orientada a negocio.
+          Proyectos adicionales que aportan evidencia de práctica frontend, interacción y construcción de interfaces.
         </p>
-        <div class="labs-grid">
-          <article class="lab-card">
-            <h4>Survivor72</h4>
-            <p>
-              Aplicación de preparación ante emergencias con contenido útil y estructura de datos más robusta.
-              Foco técnico: <strong>Java, Spring Boot y MySQL</strong>.
-            </p>
-            <a class="lab-link" href="https://seruhio30.github.io/Survival-front-end/" target="_blank">Ver ejemplo en
-              vivo</a>
-          </article>
 
+        <div class="labs-grid">
           <article class="lab-card">
             <h4>ILesco</h4>
             <p>
-              Plataforma interactiva de aprendizaje con contenido multimedia y enfoque en accesibilidad.
-              Foco técnico: <strong>HTML, CSS y JavaScript</strong>.
+              Plataforma interactiva de aprendizaje con contenido multimedia y trabajo de interfaz con HTML,
+              CSS y JavaScript.
             </p>
-            <a class="lab-link" href="https://seruhio30.github.io/ILesco/" target="_blank">Ver ejemplo en vivo</a>
+            <a class="lab-link" href="https://seruhio30.github.io/ILesco/"
+              target="_blank" rel="noopener noreferrer">Ver demo</a>
           </article>
 
           <article class="lab-card">
-            <h4>Job Track Application</h4>
+            <h4>Barbería</h4>
             <p>
-              Herramienta para organizar búsqueda laboral con login, seguimiento y gestión de estados.
-              Foco técnico: frontend dinámico y <strong>MySQL</strong>.
+              Sitio informativo responsive enfocado en presentar servicios, promociones y contacto de forma clara.
             </p>
-            <a class="lab-link" href="https://seruhio30.github.io/Job-Track-Application-Front-End/" target="_blank">Ver
-              ejemplo en vivo</a>
+            <a class="lab-link" href="https://seruhio30.github.io/Barberia/aula%201/index.html"
+              target="_blank" rel="noopener noreferrer">Ver demo</a>
+          </article>
+
+          <article class="lab-card">
+            <h4>Rafting</h4>
+            <p>
+              Proyecto de interfaz para tours de aventura, con énfasis en estructura de contenido y presentación visual.
+            </p>
+            <a class="lab-link" href="https://seruhio30.github.io/BYU-WDD130/wwr/index.html"
+              target="_blank" rel="noopener noreferrer">Ver demo</a>
           </article>
         </div>
       </section>
     </div>
   </section>
 
+
   <section class="about" id="about">
-    <h2>Sobre mí</h2>
-    <p>
-      Soy Sergio Herrera, desarrollador web full stack. Trabajo con <strong>HTML, CSS, JavaScript, Java,
-        Spring Boot y SQL</strong> para crear sitios y soluciones web pensadas para negocios reales.
-    </p>
-    <p>
-      Me enfoco en construir páginas claras, responsivas y fáciles de usar, cuidando tanto la parte visual como
-      la estructura técnica. Mi objetivo es ayudarte a tener una presencia digital más profesional, ordenada y útil
-      para tus clientes.
-    </p>
-    <p>
-      Trabajo de forma organizada, con comunicación directa y atención al detalle. También uso herramientas modernas,
-      incluyendo IA, para acelerar procesos, revisar mejor el trabajo y entregar soluciones más cuidadas.
-    </p>
+    <div class="container">
+      <h2>Sobre mí</h2>
+      <p>
+        Soy Sergio Herrera, desarrollador web full-stack. Trabajo tanto en la interfaz que utiliza una persona
+        como en la lógica que sostiene una aplicación: frontend con HTML, CSS y JavaScript, y backend con Java,
+        Spring Boot, APIs y bases de datos.
+      </p>
+      <p>
+        Me interesa construir productos completos y mantenibles, entender el problema antes de programar y conectar
+        las distintas piezas de una solución web sin perder de vista la experiencia de quien la utiliza.
+      </p>
+      <p>
+        Estoy abierto a desarrollar soluciones para clientes y también a colaborar técnicamente en proyectos,
+        contratos u oportunidades dentro de equipos de desarrollo.
+      </p>
+
+      <div class="professional-links" aria-label="Perfiles profesionales">
+        <a href="https://github.com/Seruhio30"
+          target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/sergio-herrera-rivera"
+          target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:seruhiocode30@gmail.com">seruhiocode30@gmail.com</a>
+      </div>
+    </div>
   </section>
+
 
   <section class="contact" id="contacto">
     <h2>Contacto</h2>
-    <p style="text-align:center; max-width:700px; margin:0 auto 2rem;">
-      ¿Tienes un negocio o proyecto y necesitas una página web? Escríbeme y conversemos.
-      También puedes contactarme directamente por WhatsApp para una respuesta más rápida.
+    <p class="contact-intro">
+      ¿Tienes una idea, aplicación o necesidad técnica que quieres convertir en una solución web?
+      También puedes escribirme por una colaboración, contrato u oportunidad profesional.
+      Cuéntame el contexto y conversemos.
     </p>
+
+    <div class="contact-links" aria-label="Formas de contacto">
+      <a href="mailto:seruhiocode30@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/sergio-herrera-rivera"
+        target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/Seruhio30"
+        target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
 
     <div style="text-align:center; margin-bottom:2rem;">
       <a class="btn-whatsapp"
-        href="https://wa.me/50687733663?text=Hola%20Sergio,%20quiero%20informaci%C3%B3n%20sobre%20una%20p%C3%A1gina%20web"
-        target="_blank">Hablar por WhatsApp</a>
+        href="https://wa.me/50687733663?text=Hola%20Sergio,%20vi%20tu%20portafolio%20y%20quiero%20conversar%20sobre%20un%20proyecto%20o%20colaboraci%C3%B3n"
+        target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a>
     </div>
 
     <form id="formulario-de-contacto" class="contact-form">
@@ -300,18 +352,20 @@
         <label for="categoria">¿Qué necesitas?</label>
         <select id="categoria" name="categoria">
           <option value="" disabled selected>Escoge una opción</option>
-          <option value="pagina-web">Página web para negocio</option>
-          <option value="landing-page">Landing page</option>
-          <option value="backend">Desarrollo Backend</option>
-          <option value="api">Integración de APIs</option>
-          <option value="otros">Otros</option>
+          <option value="pagina-web">Sitio o página web</option>
+          <option value="aplicacion-web">Aplicación o sistema web</option>
+          <option value="full-stack">Desarrollo full-stack</option>
+          <option value="backend">Backend o API</option>
+          <option value="colaboracion">Colaboración o contrato</option>
+          <option value="oportunidad-profesional">Oportunidad profesional</option>
+          <option value="otros">Otro</option>
         </select>
       </div>
 
       <div class="form-group">
         <label for="mensaje">Mensaje</label>
         <textarea id="mensaje" rows="5" required
-          placeholder="Cuéntame qué necesitas para tu negocio o proyecto"></textarea>
+          placeholder="Cuéntame sobre el proyecto, necesidad técnica u oportunidad"></textarea>
       </div>
       <button type="submit" class="btn">Solicitar información</button>
       <div id="loader" class="loader hidden"></div>
@@ -323,8 +377,11 @@
     <div class="container">
       <p>
         &copy; 2026
-        <a href="https://seruhio30.github.io/Portfolio-SeruhioCode30-Front-End/" target="_blank">SeruhioCode30</a>
-        | Todos los derechos reservados
+        Sergio Herrera · Desarrollador web full-stack
+        · <a href="https://github.com/Seruhio30" target="_blank" rel="noopener noreferrer">GitHub</a>
+        · <a href="https://www.linkedin.com/in/sergio-herrera-rivera" target="_blank"
+          rel="noopener noreferrer">LinkedIn</a>
+        · <a href="mailto:seruhiocode30@gmail.com">Email</a>
       </p>
     </div>
   </footer>
@@ -332,7 +389,7 @@
   <script src="script/index.js" defer></script>
 
   <a href="https://wa.me/50687733663?text=Hola%20Sergio,%20vi%20tu%20portafolio%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n"
-    class="whatsapp-float" target="_blank" aria-label="Chat en WhatsApp">
+    class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat en WhatsApp">
     <img src="assets/whatsapp.svg" alt="WhatsApp" />
   </a>
 
