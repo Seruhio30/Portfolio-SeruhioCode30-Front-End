@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     setupHamburgerMenu();
+    setupAnalyticsClicks();
+    setupProjectViewAnalytics();
 
     const form = document.getElementById("formulario-de-contacto");
 
@@ -10,6 +12,61 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+function trackClarityEvent(eventName) {
+    if (!eventName || typeof window.clarity !== "function") {
+        return;
+    }
+
+    try {
+        window.clarity("event", eventName);
+    } catch (error) {
+        console.warn("Analytics event could not be recorded.");
+    }
+}
+
+function setupAnalyticsClicks() {
+    document.querySelectorAll("[data-analytics-event]").forEach((element) => {
+        element.addEventListener("click", () => {
+            trackClarityEvent(element.dataset.analyticsEvent);
+        });
+    });
+}
+
+function setupProjectViewAnalytics() {
+    const projectElements = document.querySelectorAll("[data-analytics-project-view]");
+
+    if (!projectElements.length || !("IntersectionObserver" in window)) {
+        return;
+    }
+
+    const viewedProjects = new Set();
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting || entry.intersectionRatio < 0.25) {
+                    return;
+                }
+
+                const project = entry.target.dataset.analyticsProjectView;
+
+                if (!project || viewedProjects.has(project)) {
+                    return;
+                }
+
+                viewedProjects.add(project);
+                trackClarityEvent(`view_project_${project}`);
+                observer.unobserve(entry.target);
+            });
+        },
+        {
+            threshold: 0.25
+        }
+    );
+
+    projectElements.forEach((element) => observer.observe(element));
+}
 
 async function enviarCorreo() {
     const loader = document.getElementById("loader");
@@ -41,12 +98,13 @@ async function enviarCorreo() {
             body: JSON.stringify(emailData)
         });
 
-        const textoRespuesta = await respuesta.text();
-        console.log("Respuesta del servidor:", textoRespuesta);
+        await respuesta.text();
 
         if (!respuesta.ok) {
-            throw new Error(`Error ${respuesta.status}: ${textoRespuesta}`);
+            throw new Error(`HTTP ${respuesta.status}`);
         }
+
+        trackClarityEvent("contact_success");
 
         loader.classList.add("hidden");
         successCheck.classList.remove("hidden");
@@ -65,7 +123,7 @@ async function enviarCorreo() {
         }, 3000);
 
     } catch (err) {
-        console.error("Error al enviar formulario:", err);
+        console.error("Error al enviar formulario.");
 
         loader.classList.add("hidden");
         submitBtn.classList.remove("loading");
